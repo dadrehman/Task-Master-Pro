@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Search Action -->
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search"
+        android:orderInCategory="50"
+        android:title="@string/search"
+        app:showAsAction="always" />
+
+    <!-- Sort Submenu -->
+    <item
+        android:id="@+id/menu_sort"
+        android:icon="@android:drawable/ic_menu_sort_alphabetically"
+        android:title="@string/sort"
+        app:showAsAction="ifRoom">
+        <menu>
+            <group android:id="@+id/sort_group">
+                <item
+                    android:id="@+id/menu_sort_alphabetical"
+                    android:title="@string/by_title"
+                    android:icon="@android:drawable/ic_menu_sort_alphabetically" />
+                <item
+                    android:id="@+id/menu_sort_priority"
+                    android:title="@string/by_priority"
+                    android:icon="@android:drawable/ic_menu_agenda" />
+                <item
+                    android:id="@+id/menu_sort_date"
+                    android:title="@string/by_due_date"
+                    android:icon="@android:drawable/ic_menu_today" />
+            </group>
+        </menu>
+    </item>
+
+    <!-- Clear All Tasks (Main Action) -->
+    <item
+        android:id="@+id/action_clear_all"
+        android:orderInCategory="100"
+        android:title="@string/clear_all_tasks"
+        android:icon="@android:drawable/ic_menu_delete"
+        app:showAsAction="ifRoom" />
+</menu>

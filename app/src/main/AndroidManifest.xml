@@ -1,0 +1,109 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"/>
+    <!-- Yeh permission ensure karta hai ke app background me kaam kar sake -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:name="com.example.taskmasterpro.TodoApplication">
+
+        <!-- Main Activity (Launcher) -->
+        <activity
+            android:name="com.example.taskmasterpro.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Splash Activity -->
+        <activity
+            android:name="com.example.taskmasterpro.SplashActivity"
+            android:exported="false"/>
+
+        <!-- Dashboard Activity -->
+        <activity
+            android:name="com.example.taskmasterpro.DashboardActivity"
+            android:exported="false"/>
+
+        <!-- Task Detail Activity -->
+        <activity
+            android:name="com.example.taskmasterpro.TaskDetailActivity"
+            android:exported="false"/>
+
+        <!-- Task View Activity -->
+        <activity
+            android:name="com.example.taskmasterpro.TaskViewActivity"
+            android:exported="false"/>
+
+        <!-- Profile Activity -->
+        <activity
+            android:name="com.example.taskmasterpro.ProfileActivity"
+            android:exported="false"/>
+
+        <!-- Settings Activity -->
+        <activity
+            android:name="com.example.taskmasterpro.SettingsActivity"
+            android:exported="false"/>
+
+        <!-- Alarm Activity -->
+        <activity
+            android:name="com.example.taskmasterpro.AlarmActivity"
+            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"
+            android:excludeFromRecents="true"
+            android:taskAffinity=""
+            android:launchMode="singleInstance"
+            android:showOnLockScreen="true"
+            android:turnScreenOn="true"
+            android:exported="false" />
+
+        <!-- Boot Receiver -->
+        <receiver
+            android:name="com.example.taskmasterpro.BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- Reminder Receiver -->
+        <receiver
+            android:name="com.example.taskmasterpro.ReminderHelper$ReminderReceiver"
+            android:exported="false"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="taskmasterpro.ACTION_REMINDER"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- Alarm Service -->
+        <service
+            android:name="com.example.taskmasterpro.AlarmService"
+            android:exported="false"
+            android:stopWithTask="false"
+            android:foregroundServiceType="specialUse">
+            <meta-data
+                android:name="android.service.foregroundServiceType.specialUse"
+                android:value="Task Alarm Service for triggering alarms and notifications" />
+        </service>
+
+    </application>
+
+</manifest>

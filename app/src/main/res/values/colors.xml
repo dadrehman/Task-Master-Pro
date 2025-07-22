@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- Task Priority Colors -->
+    <color name="priorityLow">#4CAF50</color>
+    <color name="priorityMedium">#FFC107</color>
+    <color name="priorityHigh">#F44336</color>
+
+    <!-- UI Colors -->
+    <color name="backgroundColor">#F5F5F5</color>
+    <color name="cardBackground">#FAD2D2</color>
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#757575</color>
+    <color name="dividerColor">#BDBDBD</color>
+    <color name="colorLowPriority">#00FF00</color>
+    <color name="colorMediumPriority">#00FF00</color>
+    <color name="colorHighPriority">#00FF00</color>
+
+    <color name="overflow_tint">#F2CCCC</color>
+</resources>

@@ -23,12 +23,13 @@
 - Material Design components
 
 ## 🧑‍💻 Author
-Developed and maintained by **[Your Name]**.
+Developed and maintained by *Dad Rehman*.
 
 ---
 
 ### 📸 Screenshots
-_Add screenshots here if available to make your repo look even more polished._
+![1](https://github.com/user-attachments/assets/a0798ed0-7b1e-49cf-b947-320cb6cc6f4b)
+
 
 ---
 
